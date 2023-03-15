@@ -1,6 +1,6 @@
 ## Installation for my laptop
 
-Bla bla bla
+tbd
 
 ## Procedure
 
@@ -9,23 +9,17 @@ pip3 install -r requirements.txt
 
 git clone https://github.com/gpanders/editorconfig.nvim ~/.config/nvim/pack/gpanders/start/editorconfig.nvim
 
-sudo apt -yq install mlocate curl git neovim net-tools at atd ncdu whois nmap unzip
+sudo apt -yq install mlocate curl git neovim net-tools at atd ncdu whois nmap unzip fzf direnv
 ```
 
 ```bash
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.2
 
-asdf plugin add terraform
-asdf install terraform latest
-asdf global terraform latest
-
-asdf plugin add exa
-asdf install exa latest
-asdf global exa latest
-
-asdf plugin add bat
-asdf install bat latest
-asdf global bat latest
+for app in exa bat cilium-cli cilium-hubble eksctl helm istioctl kind k3d krew kubectl packer pulumi terraform velero; do
+    asdf plugin add $app
+    asdf install $app latest
+    asdf global $app latest
+done
 
 asdf reshim
 ```
