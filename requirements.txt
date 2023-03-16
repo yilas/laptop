@@ -1,1 +1,2 @@
 wakeonlan
+boto3
